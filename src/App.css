@@ -14,3 +14,10 @@ li:hover {
   font-size: 18px;
   cursor: pointer;
 }
+
+/* catelist from categoryList.jsx   */
+.cate_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
