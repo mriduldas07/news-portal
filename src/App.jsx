@@ -3,6 +3,8 @@ import "./App.css";
 import Topbar from "./components/Topbar";
 import Home from "./pages/Home";
 import DetailsNews from "./pages/DetailsNews";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:newsId" element={<DetailsNews />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </div>
   );

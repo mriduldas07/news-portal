@@ -21,3 +21,20 @@ li:hover {
   justify-content: center;
   align-items: center;
 }
+
+/* input for auth like login and register route */
+.input_auth {
+  width: 558px;
+  height: 65px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.label_auth {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #403f3f;
+  margin-bottom: 15px;
+}
