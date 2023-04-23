@@ -31,6 +31,7 @@ li:hover {
   padding: 20px;
 }
 
+/* label from login and register */
 .label_auth {
   font-weight: 600;
   font-size: 20px;

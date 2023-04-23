@@ -6,7 +6,7 @@ export default function Register() {
     <div>
       <Navbar />
       <form>
-        <div className="w-[752px] h-[981px] bg-[#FFFFFF] border-[1px] border-[#FFFFFF] rounded-[5px] mx-auto">
+        <div className="w-[752px] h-[781px] bg-[#FFFFFF] border-[1px] border-[#FFFFFF] rounded-[5px] mx-auto mt-[50px]">
           <h2 className="text-center font-semibold text-[35px] text-[#403F3F] mt-[58px] mb-[10px]">
             Register your account
           </h2>
