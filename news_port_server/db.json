@@ -1,4 +1,12 @@
 {
+  "user": [
+    {
+      "name": "Mridul Das",
+      "email": "mriduldas0325@gmail.com",
+      "password": "123456",
+      "id": 6
+    }
+  ],
   "news": [
     {
       "id": "1",
@@ -7,7 +15,10 @@
         "is_trending": true
       },
       "category": "Breaking_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 488,
       "title": "Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid Package Yet",
       "author": {
@@ -26,7 +37,10 @@
         "is_trending": true
       },
       "category": "International_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 488,
       "title": "Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid Package Yet",
       "author": {
@@ -38,7 +52,6 @@
       "image_url": "https://i.ibb.co/M23fhxm/unsplash-Eh-Tc-C9s-YXsw.png",
       "details": "Wednesday, August 24, 2022 | Tag Cloud Tags: Biden, EU, Euro, Europe, Joe Biden, Military, News, Russia, Security, UK, Ukraine, United States, Worthy News (Worthy News) – U.S. President Joe Biden has announced nearly $3 billion in new U.S. military aid for Kyiv as Ukraine marked its independence day six months after Russia invaded the country.'The United States of America is committed to supporting the people of Ukraine as they continue the fight to defend their sovereignty. As part of that commitment, I am proud to announce our biggest tranche of security assistance to date: approximately $2."
     },
-
     {
       "id": "3",
       "others_info": {
@@ -46,7 +59,10 @@
         "is_trending": true
       },
       "category": "Breaking_News",
-      "rating": { "number": 4.8, "badge": "Excellent" },
+      "rating": {
+        "number": 4.8,
+        "badge": "Excellent"
+      },
       "total_view": 400,
       "title": "Tucker Carlson Swears Vladimir Putin Is Winning The War In Ukraine",
       "author": {
@@ -65,7 +81,10 @@
         "is_trending": true
       },
       "category": "Regular_News",
-      "rating": { "number": 4.3, "badge": "Excellent" },
+      "rating": {
+        "number": 4.3,
+        "badge": "Excellent"
+      },
       "total_view": 400,
       "title": "Tucker Carlson Swears Vladimir Putin Is Winning The War In Ukraine",
       "author": {
@@ -77,7 +96,6 @@
       "image_url": "https://i.ibb.co/BZZ5WKv/unsplash-Eh-Tc-C9s-YXsw-4.png",
       "details": "Tucker Carlson has rarely met a dictator's ass he didn't want to kiss, and Vladimir Putin is at the very top of that puckering up list. The Fox News host is something of a folk hero in Russia: Because of the pro-Putin propaganda he so often spews, the Kremlin has encouraged Russia's state TV to air as much of Tucker's face as possible — and they're certain to love his latest rant about how Putin is winning the war in Ukraine, which does not seem to be the case. But on Fox News, what Tucker says goes."
     },
-
     {
       "id": "5",
       "others_info": {
@@ -85,7 +103,10 @@
         "is_trending": false
       },
       "category": "International_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 980,
       "title": "Joe Biden announces $3 billion in Ukraine weapons aid",
       "author": {
@@ -104,7 +125,10 @@
         "is_trending": false
       },
       "category": "Breaking_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 980,
       "title": "Joe Biden announces $3 billion in Ukraine weapons aid",
       "author": {
@@ -116,7 +140,6 @@
       "image_url": "https://i.ibb.co/T0PnZxD/unsplash-Eh-Tc-C9s-YXsw-8.png",
       "details": "WASHINGTON: President Joe Biden announced nearly $3 billion in military aid to Kyiv on Wednesday -- the biggest US package so far -- to mark Ukraine's independence day, six months after Russia invaded the country. The package aims to fortify Ukraine's military over the coming two years by committing the production and... read full story"
     },
-
     {
       "id": "7",
       "others_info": {
@@ -124,7 +147,10 @@
         "is_trending": true
       },
       "category": "Regular_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": null,
       "title": "Tucker Carlson: Putin Winning in Ukraine, Biden Hurting West",
       "author": {
@@ -136,7 +162,6 @@
       "image_url": "https://i.ibb.co/BZZ5WKv/unsplash-Eh-Tc-C9s-YXsw-4.png",
       "details": "Fox News's top-rated host, Tucker Carlson, claimed on Monday night that Russian President Vladimir Putin is in fact winning the war in Ukraine, and President Joe Biden's insistence that Putin surrenders his campaign to take over Ukraine is actually evidence Biden's ultimate goal is to 'destroy the West.' Carlson arrived at his bizarre claim after railing against European and American military aid to Ukraine. 'Italy's Ukraine funding is a lot, but it's not quite as much as France. France has sent more than $2 billion U."
     },
-
     {
       "id": "8",
       "others_info": {
@@ -144,7 +169,10 @@
         "is_trending": true
       },
       "category": "International_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 111,
       "title": "America Imported Over $6 Billion in Goods From Russia Since Ukraine Invasion",
       "author": {
@@ -156,7 +184,6 @@
       "image_url": "https://i.ibb.co/xh57pkr/unsplash-Eh-Tc-C9s-YXsw-1.png",
       "details": "To receive Global Research's Daily Newsletter (selected articles), click here. Follow us on Instagram and Twitter and subscribe to our Telegram Channel. Feel free to repost and share widely Global Research articles. *** In response to Russia's attack on Ukraine, US President Joe Biden vowed to isolate... read full story"
     },
-
     {
       "id": "9",
       "others_info": {
@@ -164,7 +191,10 @@
         "is_trending": false
       },
       "category": "Sports",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 733,
       "title": "Shaquille O’Neal auctions a 1000 size 22 Reeboks for $999.32 each!",
       "author": {
@@ -183,7 +213,10 @@
         "is_trending": false
       },
       "category": "Sports",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 733,
       "title": "George Russell wears $110 Daniel Ricciardo merchandise to Zandvoort paddock ahead of Dutch GP",
       "author": {
@@ -195,7 +228,6 @@
       "image_url": "https://i.ibb.co/Z2JjRnF/unsplash-Eh-Tc-C9s-YXsw-2.png",
       "details": "Mercedes’ George Russell arrived at the Zandvoort paddock wearing a Daniel Ricciardo merchandise ahead of the Dutch GP. Ricciardo is one of the most popular and marketable drivers in F1 today. Millions of fans around the world love and idolize him, and his merchandise is one of the highest-selling among all active F1 drivers. It seems as though George Russell himself is a huge fan of the former Red Bull star. Ahead of the 2022 Dutch Grand Prix, Russell arrived at Zandvoort sporting Ricciardo’s merch. He wore a full-sleeve sweater with ‘Enchante’ written on it, and according to the Aussie’s website, it costs $110. something about george russell in daniel ricciardo merch pic.twitter.com/1Z9ZqQ4Lm1 — abs (@footonthegasIy) September 1, 2022 Some people on social media also reported that the 24-year-old was not wearing his own sweater. It was his girlfriend’s sweater, and F1 Twitter loved the fact that both he and his partner are fans of the honey badger! george russell and daniel ricciardo you will always be famous pic.twitter.com/2g2cik6P5P — s (@formullana) September 1, 2022 Ricciardo is having a tough time on track in 2022, but even he will feel good to know that he has so many fans around the world who still love him. Also read: “I have a lot of respect for Ferrari in general”: 24-year old Max Verstappen shares thoughts on $1.35 billion rival team Where will Daniel Ricciardo drive in 2023? Ricciardo’s departure at the end of the season was confirmed by McLaren in August. The Perth-born driver was not performing up to expectations and the Surrey-based outfit decided to pull the plug early. This was not a popular decision, as many people including Sebastian Vettel and Lewis Hamilton felt that the 33-year-old should have gotten more time. For now, he is without an F1 seat but he’s too valuable a driver to remain on the sidelines. Strong rumors have linked him back to a move to Alpine. Team boss Otmar Szafnauer has not confirmed anything as of yet, but he remains the favorite. This is especially because their junior driver Oscar Piastri, who was first choice to replace Fernando Alonso at the team is reportedly on his way to McLaren. There are some other teams who are interested in securing the services of Ricciardo. Both him and Haas team principal Guenther Steiner recently admitted that they held talks about their 2023 seat a few weeks ago. A decision regarding his future in F1 is expected to be announced very soon. Also read: McLaren F1 to save fund from Daniel Ricciardo’s $16 Million Contract to secure Oscar Piastri   The post George Russell wears $110 Daniel Ricciardo merchandise to Zandvoort paddock ahead of Dutch GP appeared first on The SportsRush."
     },
-
     {
       "id": "11",
       "others_info": {
@@ -203,7 +235,10 @@
         "is_trending": true
       },
       "category": "Entertainment",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 127,
       "title": "9 Things to do in Colorado this Labor Day weekend",
       "author": {
@@ -222,7 +257,10 @@
         "is_trending": true
       },
       "category": "Entertainment",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 127,
       "title": "Up Late with Ben Harvey: Why Troy Mercanti needs to start an OnlyFans account",
       "author": {
@@ -234,7 +272,6 @@
       "image_url": "https://i.ibb.co/vz5K0FB/unsplash-Eh-Tc-C9s-YXsw-10.png",
       "details": "On Thursday night’s episode of Up Late, Ben Harvey has suggested Troy Mercanti start an OnlyFans account if he wishes to challenge anti-consorting laws. The notorious bikie will fight allegations that he broke WA’s stringent anti-consorting and insignia laws — but is also watching a High Court challenge to the regulations which the State Government have touted have the nation’s toughest against outlaw motorcycle gang members. The long-time one per center was not in court on Wednesday when the not guilty pleas were entered. WATCH UP LATE IN THE VIDEO PLAYER ABOVE But his lawyer Paul Holmes was, who revealed that Mercanti’s defence will be on two fronts — against elements of the alleged offence, and the legislation itself. Mercanti was charged with the two offences outside an Italian restaurant in front of shocked onlookers earlier this year. According to eyewitnesses, Mercanti — dressed in a T-shirt and shorts — was having lunch with long-time friend John Kizon at Mt Hawthorn’s Lupo Lab when more than a dozen officers from the gang crime squad descended and asked him to step outside. Soon afterwards, he was told he was being charged via summons with displaying gang insignia, which was prohibited under sweeping laws that came into effect a few months ago. Earlier the same week, Mercanti was hit with a dispersal notice by police while picking up a friend at the airport. Mercanti’s case was adjourned until October to be allocated a trial date. On Up Late, Harvey warned fighting in court may get expensive for Mercanti, and suggested a way he may be able to come up with the cash. Harvey may have gotten the idea after it was this week revealed that Dhakota Williams — the 21-year-old daughter of slain underworld king Carl Williams started an OnlyFans account. “If it’s good enough for the wife and daughter of slain gangland boss Carl Williams then it’s gotta be good enough for Troy Mercanti,” Harvey says. “See Troy’s OnlyFans page for exclusive tips for how a modern outlaw can best accessorise… find out why black and white are the only colours you need in your wardrobe… a showcase of latest leather trends… tips on keeping healthy. “And exclusively for OnlyFans subscribers... an inside look at the man who put the soft into soft serve, how he relaxes listing to 80s glam-rock and some cosplay as a Lego spaceman.”"
     },
-
     {
       "id": "13",
       "others_info": {
@@ -242,7 +279,10 @@
         "is_trending": true
       },
       "category": "Regular_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 700,
       "title": "Halo, GTA Vice City Actor Directing Movie About Hunter Biden",
       "author": {
@@ -261,7 +301,10 @@
         "is_trending": false
       },
       "category": "Arts",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 300,
       "title": "Joe Biden announces $3B in new military aid to Ukraine",
       "author": {
@@ -280,7 +323,10 @@
         "is_trending": true
       },
       "category": "Breaking_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 0,
       "title": "Biden announces $3 billion Ukraine military aid package on its Independence Day",
       "author": {
@@ -299,7 +345,10 @@
         "is_trending": true
       },
       "category": "Breaking_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 320,
       "title": "U.S. announces largest weapons package for Ukraine",
       "author": {
@@ -318,7 +367,10 @@
         "is_trending": false
       },
       "category": "Regular_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 552,
       "title": "US commander to train Ukraine military",
       "author": {
@@ -337,7 +389,10 @@
         "is_trending": true
       },
       "category": "Breaking_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 89,
       "title": "U.S. concerned about India's participation in Russia military exercises",
       "author": {
@@ -356,7 +411,10 @@
         "is_trending": true
       },
       "category": "Breaking_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 798,
       "title": "Zelensky says he had ‘great conversation' with Biden, discussed Kiev's further steps",
       "author": {
@@ -375,7 +433,10 @@
         "is_trending": true
       },
       "category": "International_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 879,
       "title": "US Pledges $3 Bln In Additional Security Assistance For Ukraine",
       "author": {
@@ -394,7 +455,10 @@
         "is_trending": true
       },
       "category": "Breaking_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 231,
       "title": "US to name military mission in Ukraine and appoint commander – WSJ",
       "author": {
@@ -413,7 +477,10 @@
         "is_trending": true
       },
       "category": "Breaking_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 546,
       "title": "Opinion: After a summer of surprising successes, President Biden is on a roll",
       "author": {
@@ -432,7 +499,10 @@
         "is_trending": true
       },
       "category": "International_News",
-      "rating": { "number": 4.5, "badge": "Excellent" },
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 1870,
       "title": "Ukraine receives more military aid from allies on its independence day",
       "author": {
@@ -452,7 +522,10 @@
         "is_trending": true
       },
       "category": "Arts",
-      "rating": { "number": 4.2, "badge": "Excellent" },
+      "rating": {
+        "number": 4.2,
+        "badge": "Excellent"
+      },
       "total_view": 354,
       "title": "‘Self-obsessed liar’: Meghan mocked for Mandela story",
       "author": {
@@ -471,8 +544,10 @@
         "is_trending": true
       },
       "category": "Entertainment",
-      "rating": { "number": 4.5, "badge": "Excellent" },
-
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 100,
       "title": "California to phase out sales of gas-powered cars",
       "author": {
@@ -491,8 +566,10 @@
         "is_trending": false
       },
       "category": "Sports",
-      "rating": { "number": 4.5, "badge": "Excellent" },
-
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
       "total_view": 100,
       "title": "“Max Verstappen has plenty trophies” – Lando Norris wants $50 Million a year Dutch sensation to give him his trophy",
       "author": {

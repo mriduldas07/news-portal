@@ -39,3 +39,12 @@ li:hover {
   color: #403f3f;
   margin-bottom: 15px;
 }
+
+/* liner gradiant from login page  */
+.liner {
+  background: linear-gradient(90deg, #ff8c47 0%, #f75b5f 100.02%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
