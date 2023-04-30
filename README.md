@@ -1,4 +1,4 @@
--- fetching single data
+-- fetching single data (done)
 -- trending
 -- category
 -- latest

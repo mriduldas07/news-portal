@@ -11,6 +11,9 @@ import { useSelector } from "react-redux";
 export default function NewsContainer() {
   const { news, isLoading, isError } = useSelector((state) => state.news);
 
+  // filtering for tranding news
+  const trandingArray = news?.filter((n) => n.others_info.is_trending);
+
   // data maping for news Container
   let newsContent;
   if (isLoading) return (newsContent = <p>Loading...</p>);
@@ -27,9 +30,10 @@ export default function NewsContainer() {
       <div className="col-span-3">
         <CategoryList />
         <div className="mt-[30px]">
-          <RelaltedNews />
-          <RelaltedNews />
-          <RelaltedNews />
+          {/* maping on tranding array  */}
+          {trandingArray?.map((t) => (
+            <RelaltedNews news={t} />
+          ))}
         </div>
       </div>
       <div className="col-span-6 mx-auto">
