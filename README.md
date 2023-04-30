@@ -1,0 +1,5 @@
+-- fetching single data
+-- trending
+-- category
+-- latest
+-- save and share

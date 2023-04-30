@@ -16,7 +16,6 @@ export default function Navbar() {
     navigate("/login");
   };
 
-  console.log(user);
   const handleManuber = () => {
     if (user) {
       setOpenModal(!openModal);

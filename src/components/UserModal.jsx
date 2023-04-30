@@ -8,9 +8,6 @@ export default function UserModal() {
         <Link className="text-white" to="/dashboard">
           Dashboard
         </Link>
-        <Link className="text-white" to="/profile">
-          Profile
-        </Link>
       </div>
     </div>
   );
