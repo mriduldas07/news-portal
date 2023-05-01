@@ -48,3 +48,12 @@ li:hover {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* active class from categoryList */
+.activeCategory {
+  width: 267px;
+  height: 64px;
+  background: #e7e7e7;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+}

@@ -11,6 +11,8 @@ import { useSelector } from "react-redux";
 export default function NewsContainer() {
   const { news, isLoading, isError } = useSelector((state) => state.news);
 
+  const categoryFilter = useSelector((state) => state.filter.category);
+
   // filtering for tranding news
   const trandingArray = news?.filter((n) => n.others_info.is_trending);
 
@@ -22,7 +24,14 @@ export default function NewsContainer() {
     return (newsContent = <p>Something Went Wrong!!!</p>);
 
   if (!isLoading && !isError && news.length > 0) {
-    newsContent = news.map((n) => <News key={n.id} news={n} />);
+    newsContent = news
+      .filter((f) => {
+        if (categoryFilter) {
+          return f.category === categoryFilter;
+        }
+        return f;
+      })
+      .map((n) => <News key={n.id} news={n} />);
   }
 
   return (
@@ -32,7 +41,7 @@ export default function NewsContainer() {
         <div className="mt-[30px]">
           {/* maping on tranding array  */}
           {trandingArray?.map((t) => (
-            <RelaltedNews news={t} />
+            <RelaltedNews news={t} key={t.id} />
           ))}
         </div>
       </div>

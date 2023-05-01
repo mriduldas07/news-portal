@@ -1,5 +1,5 @@
 -- fetching single data (done)
--- trending
+-- trending (done)
 -- category
 -- latest
 -- save and share
