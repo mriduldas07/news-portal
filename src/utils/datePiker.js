@@ -12,6 +12,12 @@ const optionsForRelatedNews = {
   year: "numeric",
 };
 
+const optionsForLatestNews = {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+};
+
 // export this date
 export const dateForHeader = new Date().toLocaleDateString(
   "en-US",
@@ -21,4 +27,9 @@ export const dateForHeader = new Date().toLocaleDateString(
 export const dateForRelatedNews = new Date().toLocaleDateString(
   "en-US",
   optionsForRelatedNews
+);
+
+export const dateForLatestNews = new Date().toLocaleDateString(
+  "en-US",
+  optionsForLatestNews
 );

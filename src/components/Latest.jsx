@@ -1,4 +1,5 @@
 import React from "react";
+import LatestNewsTicker from "./LatestNewsTicker";
 
 export default function Latest() {
   return (
@@ -6,9 +7,8 @@ export default function Latest() {
       <div className="w-[110px] h-[48px] bg-[#D72050] text-white flex justify-center items-center">
         Latest
       </div>
-      <div>
-        Match Highlights: Germany vs Spain — as it happened ! Match Highlights:
-        Germany vs Spain as...
+      <div className="w-[855px]">
+        <LatestNewsTicker />
       </div>
     </div>
   );

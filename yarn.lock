@@ -1526,6 +1526,11 @@ nanoid@^3.3.6:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.6.tgz#443380c856d6e9f9824267d960b4236ad583ea4c"
   integrity sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==
 
+nice-react-ticker@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/nice-react-ticker/-/nice-react-ticker-2.1.0.tgz#c630bfc9964210e700f60ae195858677ff6e0fee"
+  integrity sha512-aI2Xgx5hwPTLM7upy8VbSC+MhjbYaPEnVNAmf0emuWZKtzp/m8Eioky6q0/18gcLS4cDqVXncFRNyFmQ3//cZg==
+
 node-fetch@2.6.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
