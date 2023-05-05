@@ -10,12 +10,15 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const [signInWithEmailAndPassword, user, error] =
+    useSignInWithEmailAndPassword(auth);
 
   const handleLogin = async (e) => {
     e.preventDefault();
     await signInWithEmailAndPassword(email, password);
-    navigate("/");
+    if (user) {
+      navigate("/");
+    }
     resetData(setEmail, setPassword);
   };
 
@@ -56,6 +59,7 @@ export default function Login() {
               value="Login"
             />
           </div>
+          <p>{error}</p>
           <p className="text-center font-semibold text-[16px] text-[#706F6F] mt-[30px]">
             Dont’t Have An Account ?{" "}
             <span

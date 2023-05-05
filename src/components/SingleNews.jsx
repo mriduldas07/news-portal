@@ -1,7 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { categorySelected } from "../features/filter/filterSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function SingleNews({ news }) {
-  const { title, image_url, details } = news || {};
+  const dispatch = useDispatch();
+  const { title, image_url, details, category } = news || {};
+  // console.log(category);
+  const navigate = useNavigate();
   return (
     <div className="mx-auto">
       <h3 className="font-semibold text-[20px] text-[#403F3F]">Dragon News</h3>
@@ -20,7 +26,15 @@ export default function SingleNews({ news }) {
           </p>
           <div className="w-[300px] h-[48px] bg-[#D72050] flex justify-center items-center gap-[5px] cursor-pointer my-[32px]">
             <img src="/assets/arrow.png" alt="arrow_icon" />
-            <p className="text-white">All news in this category</p>
+            <p
+              className="text-white"
+              onClick={() => {
+                dispatch(categorySelected(category));
+                navigate("/");
+              }}
+            >
+              All news in this category
+            </p>
           </div>
         </div>
       </div>

@@ -1,15 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { _author_date_split } from "../utils/_utlities_function";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase.config";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUser } from "../features/user/userSlice";
+import { CiBookmarkRemove } from "react-icons/ci";
+import { createSavedData, fetchSavedData } from "../features/save/saveSlice";
 
 export default function News({ news }) {
+  const { user: userData } = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
+  const [isSaved, setIsSaved] = useState(false);
   const { author, title, total_view, rating, image_url, details, id } =
     news || {};
+
   const {
     name: author_name,
     published_date: author_publish_date,
     img: author_img,
   } = author || {};
+  const [user] = useAuthState(auth);
+  const { email } = user || {};
+  const navigate = useNavigate();
+
+  const handleSave = (id) => {
+    if (email) {
+      const { id: userId } = userData?.find((u) => u.email == email);
+      const savedData = {
+        userId,
+        newsId: id,
+      };
+      dispatch(createSavedData(savedData));
+      setIsSaved(true);
+    } else {
+      alert("Please login to save");
+      navigate("/login");
+    }
+  };
+
+  useEffect(() => {
+    dispatch(fetchUser());
+  }, [dispatch]);
+
   return (
     <div className="w-[558px] h-[694px] bg-[#FFFFFF] border-[1px] border-[#E7E7E7] rounded-[5px]">
       <div className=" rounded-tl-[5px] rounded-tr-[5px] border-[1px] border-[#F3F3F3] bg-[#F3F3F3] w-full h-[80px] flex justify-between items-center">
@@ -29,11 +63,16 @@ export default function News({ news }) {
           </div>
         </div>
         <div className="flex justify-center items-center gap-[13px] pr-[28px]">
-          <img
-            className="cursor-pointer"
-            src="/assets/saveIcon.png"
-            alt="saveIcon"
-          />
+          {isSaved ? (
+            <CiBookmarkRemove size={30} className="cursor-pointer" />
+          ) : (
+            <img
+              className="cursor-pointer"
+              src="/assets/saveIcon.png"
+              alt="saveIcon"
+              onClick={() => handleSave(id)}
+            />
+          )}
           <img
             className="cursor-pointer"
             src="/assets/shareIcn.png"
