@@ -6,6 +6,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   error: "",
+  author: "",
 };
 
 // thunk middlewares
@@ -22,6 +23,11 @@ export const fetchSingleNews = createAsyncThunk(
 const singleNewsSlice = createSlice({
   name: "singleNewsSlice",
   initialState,
+  reducers: {
+    addAuthor: (state, action) => {
+      state.author = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchSingleNews.pending, (state) => {
@@ -43,3 +49,4 @@ const singleNewsSlice = createSlice({
 });
 
 export default singleNewsSlice.reducer;
+export const { addAuthor } = singleNewsSlice.actions;

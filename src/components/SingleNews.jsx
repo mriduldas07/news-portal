@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { categorySelected } from "../features/filter/filterSlice";
 import { useNavigate } from "react-router-dom";
+import { addAuthor } from "../features/singleNews/singleNewsSlice";
 
 export default function SingleNews({ news }) {
   const dispatch = useDispatch();
-  const { title, image_url, details, category } = news || {};
-  // console.log(category);
+  const { title, image_url, details, category, author } = news || {};
   const navigate = useNavigate();
+
   return (
     <div className="mx-auto">
       <h3 className="font-semibold text-[20px] text-[#403F3F]">Dragon News</h3>

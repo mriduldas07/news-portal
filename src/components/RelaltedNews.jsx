@@ -1,10 +1,14 @@
 import React from "react";
 import { dateForRelatedNews } from "../utils/datePiker";
-import { _category_join } from "../utils/_utlities_function";
+import {
+  _author_date_split,
+  _category_join,
+  _date_formater,
+} from "../utils/_utlities_function";
 import { Link } from "react-router-dom";
 
 export default function RelaltedNews({ news }) {
-  const { title, category, image_url, id } = news || {};
+  const { title, category, image_url, id, author } = news || {};
   return (
     <div className="w-[267px] h-[306px]">
       <Link to={`/news/${id}`}>
@@ -19,7 +23,9 @@ export default function RelaltedNews({ news }) {
             src="/assets/folderIcon.png"
             alt="folderIcon"
           />
-          <span className="mt-[3px]">{dateForRelatedNews}</span>
+          <span className="mt-[3px]">
+            {_date_formater(_author_date_split(author.published_date))}
+          </span>
         </div>
       </div>
     </div>
