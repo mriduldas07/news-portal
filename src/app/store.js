@@ -4,6 +4,7 @@ import singleNewsReducer from "../features/singleNews/singleNewsSlice";
 import filterReducer from "../features/filter/filterSlice";
 import userReducer from "../features/user/userSlice";
 import saveReducer from "../features/save/saveSlice";
+import newsForQueryEmailReducer from "../features/newsForQueryEmail/newsForQueryEmailSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     filter: filterReducer,
     user: userReducer,
     save: saveReducer,
+    myNews: newsForQueryEmailReducer,
   },
 });
