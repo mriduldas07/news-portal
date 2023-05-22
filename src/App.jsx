@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import RequireAuth from "./hooks/RequireAuth";
 import MyNews from "./components/MyNews";
 import Profile from "./components/Profile";
+import AddNews from "./components/AddNews";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         >
           <Route index element={<MyNews />} />
           <Route path="myProfile" element={<Profile />} />
+          <Route path="addNews" element={<AddNews />} />
         </Route>
       </Routes>
     </div>

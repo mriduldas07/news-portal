@@ -25,3 +25,7 @@ export const _date_formater = (date) => {
   // combine the month name, day, and year into the desired format
   return `${monthName} ${day}, ${year}`;
 };
+
+export const _date_time_maker = (itm) => {
+  return itm.toString().slice(-2).length === 1 ? "0" + itm : itm;
+};

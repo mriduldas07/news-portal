@@ -35,8 +35,8 @@ export default function Navbar() {
       </ul>
       <div className="flex justify-end items-center mt-[-2rem]">
         <img
-          src="/assets/profile.png"
-          className="mr-[9px] cursor-pointer"
+          src={user?.photoURL}
+          className="mr-[9px] cursor-pointer w-[41px] h-[41px] rounded-full"
           alt="profile"
           onClick={handleManuber}
         />
@@ -49,7 +49,7 @@ export default function Navbar() {
         )}
         {user ? (
           <div className="flex justify-center items-center gap-5">
-            <h6>{user.displayName}</h6>
+            <h6>{user?.displayName}</h6>
             <FiLogOut
               size={30}
               className="cursor-pointer"

@@ -5,6 +5,12 @@
       "email": "mriduldas0325@gmail.com",
       "password": "123456",
       "id": 1
+    },
+    {
+      "name": "lol",
+      "email": "lolboy@gmail.com",
+      "password": "123456",
+      "id": 2
     }
   ],
   "news": [

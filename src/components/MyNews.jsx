@@ -7,6 +7,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase.config";
 import { _category_join } from "../utils/_utlities_function";
 import { _author_date_split } from "../utils/_utlities_function";
+import { Link } from "react-router-dom";
 
 export default function MyNews() {
   const { news } = useSelector((state) => state.myNews);
@@ -17,17 +18,20 @@ export default function MyNews() {
   const columns = useMemo(() => [
     {
       header: "Category",
-      accessorFn: (row) => _category_join(row.category),
+      accessorFn: (row) => (
+        <Link to={`/news/${row.id}`}>{_category_join(row.category)}</Link>
+      ),
     },
     {
       header: "Date",
       accessorFn: (row) => _author_date_split(row.author.published_date),
     },
     {
-      //   accessorKey: "thumbnail_url",
       header: "Thumbnail",
       accessorFn: (row) => (
-        <img src={row.image_url} className="w-[50px]" alt="" />
+        <Link to={`/news/${row.id}`}>
+          <img src={row.image_url} className="w-[50px]" alt="" />
+        </Link>
       ),
     },
     {
