@@ -8,12 +8,18 @@ import { auth } from "../firebase.config";
 import { _category_join } from "../utils/_utlities_function";
 import { _author_date_split } from "../utils/_utlities_function";
 import { Link } from "react-router-dom";
+import { GrDocumentUpdate, AiOutlineDelete } from "react-icons/all";
+import { editActive } from "../features/news/newsSlice";
 
 export default function MyNews() {
   const { news } = useSelector((state) => state.myNews);
   const dispatch = useDispatch();
   const [user] = useAuthState(auth);
   const { email } = user || {};
+
+  const handleEditActive = (row) => {
+    dispatch(editActive(row));
+  };
 
   const columns = useMemo(() => [
     {
@@ -60,6 +66,17 @@ export default function MyNews() {
             <Typography>
               <h1 className="font-semibold text-xl"> {row.original.title}</h1>
               <p className="py-2">{row.original.details}</p>
+              <div className="flex gap-5 justify-center items-center">
+                <div
+                  className="bg-green-600 px-3 py-3 rounded-full cursor-pointer"
+                  onClick={() => handleEditActive(row.original)}
+                >
+                  <GrDocumentUpdate size={30} />
+                </div>
+                <div className="bg-red-600 px-3 py-3 rounded-full cursor-pointer">
+                  <AiOutlineDelete size={34} />
+                </div>
+              </div>
             </Typography>
           </Box>
         )}

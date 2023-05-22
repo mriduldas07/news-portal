@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { addNews, getAllNews } from "./newsAPI";
+import { addNews, deleteNews, getAllNews, updateNews } from "./newsAPI";
 
 const initialState = {
   news: [],
   isLoading: false,
   isError: false,
   error: "",
+  editing: {},
 };
 
 export const fetchNews = createAsyncThunk("news/fetchNews", async () => {
@@ -18,11 +19,32 @@ export const createNews = createAsyncThunk("news/createNews", async (data) => {
   return news;
 });
 
+export const changeNews = createAsyncThunk(
+  "news/changeNews",
+  async ({ id, data }) => {
+    const news = await updateNews(id, data);
+    return news;
+  }
+);
+
+export const removeNews = createAsyncThunk("news/removeNews", async (id) => {
+  const news = await deleteNews(id);
+  return news;
+});
+
 // slice
 
 const newsSlice = createSlice({
   name: "news",
   initialState,
+  reducers: {
+    editActive: (state, action) => {
+      state.editing = action.payload;
+    },
+    editInActive: (state) => {
+      state.editing = {};
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchNews.pending, (state) => {
@@ -58,3 +80,4 @@ const newsSlice = createSlice({
 });
 
 export default newsSlice.reducer;
+export const { editActive, editInActive } = newsSlice.actions;
