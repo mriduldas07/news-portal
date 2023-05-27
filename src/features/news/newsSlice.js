@@ -75,6 +75,40 @@ const newsSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         state.error = action.error?.message;
+      })
+      .addCase(changeNews.pending, (state) => {
+        state.isError = false;
+        state.isLoading = true;
+      })
+      .addCase(changeNews.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = false;
+
+        const newsIndex = state.news.findIndex(
+          (f) => f.id === action.payload.id
+        );
+
+        state.news[newsIndex] = action.payload;
+      })
+      .addCase(changeNews.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.error = action.error?.message;
+      })
+      .addCase(removeNews.pending, (state) => {
+        state.isError = false;
+        state.isLoading = true;
+      })
+      .addCase(removeNews.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = false;
+
+        state.news = state.news.filter((f) => f.id !== action.meta.arg);
+      })
+      .addCase(removeNews.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.error = action.error?.message;
       });
   },
 });

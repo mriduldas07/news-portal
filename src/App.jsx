@@ -10,6 +10,7 @@ import RequireAuth from "./hooks/RequireAuth";
 import MyNews from "./components/MyNews";
 import Profile from "./components/Profile";
 import AddNews from "./components/AddNews";
+import UpdateModal from "./components/UpdateModal";
 
 function App() {
   return (
@@ -20,6 +21,14 @@ function App() {
         <Route path="/news/:newsId" element={<DetailsNews />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route
+          path="/update/:id"
+          element={
+            <RequireAuth>
+              <UpdateModal />
+            </RequireAuth>
+          }
+        />
         <Route
           path="/dashboard"
           element={

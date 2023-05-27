@@ -14,7 +14,7 @@ export default function NewsContainer() {
   const categoryFilter = useSelector((state) => state.filter.category);
 
   // filtering for tranding news
-  const trandingArray = news?.filter((n) => n.others_info.is_trending);
+  const trandingArray = news?.filter((n) => n.others_info?.is_trending);
 
   // data maping for news Container
   let newsContent;

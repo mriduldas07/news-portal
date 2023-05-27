@@ -20,7 +20,7 @@ export default function CategoryList() {
 
   return (
     <div>
-      <h4 className="w-[126px] h-[30px] font-semibold text-[20px] text-[#403F3F]">
+      <h4 className="w-[126px] h-[30px] text-[20px] text-[#403F3F]">
         All Caterogy
       </h4>
       <div className="">

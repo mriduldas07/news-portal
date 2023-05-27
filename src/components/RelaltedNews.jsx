@@ -24,7 +24,7 @@ export default function RelaltedNews({ news }) {
             alt="folderIcon"
           />
           <span className="mt-[3px]">
-            {_date_formater(_author_date_split(author.published_date))}
+            {_date_formater(_author_date_split(author?.published_date))}
           </span>
         </div>
       </div>

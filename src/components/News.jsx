@@ -105,7 +105,7 @@ export default function News({ news }) {
             <img src="/assets/starIcon.png" alt="Rating" />
             <img src="/assets/starIcon.png" alt="Rating" />
           </div>
-          <span className="pt-[3px]">{rating.number}</span>
+          <span className="pt-[3px]">{rating?.number}</span>
         </div>
         <div className="flex justify-center items-center gap-[10px] pr-[20px]">
           <img src="/assets/eyeIcon.png" alt="Views" />

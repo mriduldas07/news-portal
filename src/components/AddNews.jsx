@@ -1,23 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { auth } from "../firebase.config";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { _date_time_maker } from "../utils/_utlities_function";
-import { createNews } from "../features/news/newsSlice";
+import {
+  changeNews,
+  createNews,
+  editInActive,
+} from "../features/news/newsSlice";
 import resetData from "../utils/resetData";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
+import { useNavigate } from "react-router-dom";
 
 export default function AddNews() {
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("Breaking_News");
+  const [category, setCategory] = useState("");
   const [details, setDetails] = useState("");
   const [checked, setChecked] = useState(false);
   const [user] = useAuthState(auth);
   const { email, displayName, photoURL } = user || {};
+  const navigate = useNavigate();
 
   const date = new Date();
 
-  const handleSubmit = (e) => {
+  const handleAddNews = (e) => {
     e.preventDefault();
     const CLIENT_API_KEY = "41638383b537c533d6c237f313e5cf71";
     const imgUrl = e.target.newsImg.files[0];
@@ -58,9 +66,9 @@ export default function AddNews() {
             image_url: img,
             details,
           };
-          console.log(data);
           confirm("You Want To Add News?") && dispatch(createNews(data));
           resetData(setTitle, setCategory, setChecked, setDetails);
+          navigate("/dashboard");
         }
       });
     e.target.reset();
@@ -70,12 +78,13 @@ export default function AddNews() {
       <h1 className="text-center text-3xl text-semibold mb-8">
         Publish Your News
       </h1>
-      <form className=" mt-5" onSubmit={handleSubmit}>
+      <form className=" mt-5" onSubmit={handleAddNews}>
         <div className="flex justify-center items-center">
           <div className="w-[500px]">
             <input
               type="text"
               name="title"
+              value={title}
               className="border-[3px] border-[#666565] rounded py-2 px-5"
               placeholder="News Title"
               required
@@ -84,11 +93,14 @@ export default function AddNews() {
           </div>
           <select
             name="category"
+            value={category}
+            id="category"
             placeholder="News Category"
             className="border-[3px] border-[#666565] rounded py-2 px-5"
             required
             onChange={(e) => setCategory(e.target.value)}
           >
+            <option>Choose one</option>
             <option value="Breaking_News">Breaking_News</option>
             <option value="International_News">International_News</option>
             <option value="Regular_News">Regular_News</option>
@@ -100,6 +112,7 @@ export default function AddNews() {
         <div className="flex justify-center">
           <textarea
             name="details"
+            value={details}
             cols="48"
             rows="8"
             placeholder="News Details..."
@@ -113,10 +126,12 @@ export default function AddNews() {
           <input
             type="file"
             name="newsImg"
+            data-tooltip-id="img-tooltip"
+            data-tooltip-content="Very Carefull. You Can't Update Image Any More!!"
             className="block text-sm text-slate-500
               file:mr-4 file:py-2 file:px-4
               file:rounded-full file:border-0
-              file:text-lg   file:font-semibold
+              file:text-lg file:font-semibold
               file:bg-violet-50 file:text-[#3c3cbe]
               hover:file:bg-violet-200 my-5 cursor-pointer"
             required
@@ -125,6 +140,7 @@ export default function AddNews() {
         <div className="flex justify-center items-center gap-2">
           <input
             type="checkbox"
+            checked={checked}
             name=""
             onChange={() => setChecked(!checked)}
           />
@@ -151,6 +167,7 @@ export default function AddNews() {
           <input type="submit" value="Add News" className="cursor-pointer" />
         </div>
       </form>
+      <Tooltip id="img-tooltip" style={{ background: "#3c3cbe" }} />
     </div>
   );
 }

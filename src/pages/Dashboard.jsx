@@ -13,6 +13,7 @@ export default function Dashboard() {
         </div>
         <div className="col-span-9">
           <h1 className="font-bold text-3xl">Overview</h1>
+
           <div className="">
             <Outlet />
           </div>

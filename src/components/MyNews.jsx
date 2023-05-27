@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import MaterialReactTable from "material-react-table";
 import { Box, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,18 +7,25 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase.config";
 import { _category_join } from "../utils/_utlities_function";
 import { _author_date_split } from "../utils/_utlities_function";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GrDocumentUpdate, AiOutlineDelete } from "react-icons/all";
-import { editActive } from "../features/news/newsSlice";
+import { editActive, removeNews } from "../features/news/newsSlice";
 
 export default function MyNews() {
   const { news } = useSelector((state) => state.myNews);
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const [user] = useAuthState(auth);
   const { email } = user || {};
 
   const handleEditActive = (row) => {
     dispatch(editActive(row));
+    navigate(`/update/${row.id}`);
+  };
+  const handleDelete = (id) => {
+    dispatch(removeNews(id));
+    confirm("Want to delete this news?");
   };
 
   const columns = useMemo(() => [
@@ -48,7 +55,7 @@ export default function MyNews() {
 
   useEffect(() => {
     dispatch(fetchNewsForEmail(email));
-  }, [dispatch, email]);
+  }, [dispatch, email, handleDelete]);
   return (
     <div className="min-h-screen">
       <h1 className="text-semibold text-2xl my-6 text-center">My News</h1>
@@ -73,7 +80,10 @@ export default function MyNews() {
                 >
                   <GrDocumentUpdate size={30} />
                 </div>
-                <div className="bg-red-600 px-3 py-3 rounded-full cursor-pointer">
+                <div
+                  className="bg-red-600 px-3 py-3 rounded-full cursor-pointer"
+                  onClick={() => handleDelete(row.original.id)}
+                >
                   <AiOutlineDelete size={34} />
                 </div>
               </div>

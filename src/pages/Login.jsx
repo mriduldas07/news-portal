@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import { useNavigate } from "react-router-dom";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { auth } from "../firebase.config";
 import resetData from "../utils/resetData";
 
@@ -10,17 +13,21 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const location = useLocation();
+  let from = location?.state?.from?.pathname || "/";
+
   const [signInWithEmailAndPassword, user, error] =
     useSignInWithEmailAndPassword(auth);
 
   const handleLogin = async (e) => {
     e.preventDefault();
     await signInWithEmailAndPassword(email, password);
-    if (user) {
-      navigate("/");
-    }
     resetData(setEmail, setPassword);
   };
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
 
   return (
     <div>
