@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://news-portal-server-52bn.onrender.com",
 });
 
 export default instance;
