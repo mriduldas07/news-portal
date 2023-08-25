@@ -1,1 +1,1 @@
-# live server: news-portal-green.vercel.app
+# live server: https://news-portal-green.vercel.app/
