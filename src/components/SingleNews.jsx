@@ -17,7 +17,7 @@ export default function SingleNews({ news }) {
           <img
             src={image_url}
             alt="news_pic"
-            className="w-full lg:h-[411px] lg:mx-auto mt-[20px]"
+            className="w-full lg:h-[411px] lg:mx-auto mt-1 lg:mt-[20px]"
           />
           <h2 className="font-bold lg:text-[25px] text-[#403F3F] lg:leading-[45px] mt-[20px] mx-auto px-2 lg:px-0 w-fit">
             {title}
