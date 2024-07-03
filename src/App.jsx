@@ -1,20 +1,20 @@
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Topbar from "./components/Topbar";
-import Home from "./pages/Home";
-import DetailsNews from "./pages/DetailsNews";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
-import RequireAuth from "./hooks/RequireAuth";
+import AddNews from "./components/AddNews";
 import MyNews from "./components/MyNews";
 import Profile from "./components/Profile";
-import AddNews from "./components/AddNews";
+import Topbar from "./components/Topbar";
 import UpdateModal from "./components/UpdateModal";
+import RequireAuth from "./hooks/RequireAuth";
+import Dashboard from "./pages/Dashboard";
+import DetailsNews from "./pages/DetailsNews";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
-    <div className=" w-[1140px] mx-auto">
+    <div className="mx-auto px-0 lg:px-10">
       <Topbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import SingleNews from "../components/SingleNews";
-import RelatedEditor from "../components/RelatedEditor";
-import SocialLogin from "../components/SocialLogin";
-import SocialMedia from "../components/SocialMedia";
-import QJone from "../components/QJone";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import QJone from "../components/QJone";
+import RelatedEditor from "../components/RelatedEditor";
+import SingleNews from "../components/SingleNews";
+import SocialLogin from "../components/SocialLogin";
+import SocialMedia from "../components/SocialMedia";
 import {
   addAuthor,
   fetchSingleNews,
@@ -28,17 +28,19 @@ export default function DetailsNews() {
   if (!isLoading && isError)
     return (singleNewsContent = <p>Something went wrong!!!</p>);
 
-  if (!isLoading && !isError && singleNews.id) {
+  if (!isLoading && !isError && singleNews._id) {
     singleNewsContent = <SingleNews news={singleNews} />;
   }
 
   return (
-    <div className="grid grid-cols-12 gap-4 mt-[30px]">
-      <div className="col-span-9">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-[30px] px-3 lg:w-fit">
+      <div className="lg:col-span-9">
         {singleNewsContent}
-        <RelatedEditor />
+        <div className="flex justify-center">
+          <RelatedEditor />
+        </div>
       </div>
-      <div className="col-span-3">
+      <div className="hidden lg:block lg:col-span-3">
         <SocialLogin />
         <SocialMedia />
         <QJone />

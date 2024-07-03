@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { auth } from "../firebase.config";
 import axiosIns from "../utils/axios";
 import resetData from "../utils/resetData";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase.config";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -42,8 +42,8 @@ export default function Register() {
     <div>
       <Navbar />
       <form onSubmit={handleRegister}>
-        <div className="w-[752px] h-[981px] bg-[#FFFFFF] border-[1px] border-[#FFFFFF] rounded-[5px] mx-auto mt-[50px]">
-          <h2 className="text-center font-semibold text-[35px] text-[#403F3F] mt-[58px] mb-[10px]">
+        <div className="w-full lg:w-[752px] h-[981px] bg-[#FFFFFF] border-[1px] border-[#FFFFFF] rounded-[5px] mx-auto lg:mt-[50px]">
+          <h2 className="text-center font-semibold lg:text-[35px] text-[#403F3F] mt-7 lg:mt-[58px] mb-[10px]">
             Register your account
           </h2>
           <br />
@@ -54,7 +54,7 @@ export default function Register() {
               <input
                 type="text"
                 placeholder="Enter your name"
-                className="input_auth"
+                className="px-5 w-full lg:w-[558px] h-[65px] bg-[#f3f3f3] rounded-md"
                 name="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -63,7 +63,7 @@ export default function Register() {
             <div className="flex flex-col gap-[15px] mx-auto">
               <label className="label_auth">Email</label>
               <input
-                className="input_auth"
+                className="px-5 w-full lg:w-[558px] h-[65px] bg-[#f3f3f3] rounded-md"
                 type="email"
                 placeholder="Enter your email address"
                 value={email}
@@ -73,7 +73,7 @@ export default function Register() {
             <div className="flex flex-col gap-[15px] mx-auto">
               <label className="label_auth">Password</label>
               <input
-                className="input_auth"
+                className="px-5 w-full lg:w-[558px] h-[65px] bg-[#f3f3f3] rounded-md"
                 type="password"
                 placeholder="Enter your password"
                 value={password}
@@ -81,11 +81,20 @@ export default function Register() {
               />
             </div>
             <input
-              className="text-[#FFFFFF] font-semibold text-[20px] cursor-pointer mx-auto w-[558px] h-[65px] bg-[#403F3F] rounded-[5px] mt-[15px]"
+              className="text-[#FFFFFF] font-semibold text-[20px] cursor-pointer mx-auto px-28 lg:px-0 lg:w-[558px] h-[65px] bg-[#403F3F] rounded-[5px] mt-[15px]"
               type="submit"
               value="Register"
             />
           </div>
+          <p className="text-center font-semibold text-[16px] text-[#706F6F] mt-[30px]">
+            Already Have An Account ?{" "}
+            <span
+              className="liner cursor-pointer"
+              onClick={() => navigate("/login")}
+            >
+              Login
+            </span>
+          </p>
         </div>
       </form>
     </div>

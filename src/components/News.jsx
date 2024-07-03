@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { _author_date_split } from "../utils/_utlities_function";
-import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase.config";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchUser } from "../features/user/userSlice";
 import { CiBookmarkRemove } from "react-icons/ci";
-import { createSavedData, fetchSavedData } from "../features/save/saveSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { createSavedData } from "../features/save/saveSlice";
+import { fetchUser } from "../features/user/userSlice";
+import { auth } from "../firebase.config";
+import { _author_date_split } from "../utils/_utlities_function";
 
 export default function News({ news }) {
   const { user: userData } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
   const [isSaved, setIsSaved] = useState(false);
-  const { author, title, total_view, rating, image_url, details, id } =
+  const { author, title, total_view, rating, image_url, details, _id } =
     news || {};
 
   const {
@@ -45,7 +45,7 @@ export default function News({ news }) {
   }, [dispatch]);
 
   return (
-    <div className="w-[558px] h-[694px] bg-[#FFFFFF] border-[1px] border-[#E7E7E7] rounded-[5px]">
+    <div className="w-11/12 lg:w-[558px] bg-[#FFFFFF] border-[1px] border-[#E7E7E7] rounded-[5px] mx-auto">
       <div className=" rounded-tl-[5px] rounded-tr-[5px] border-[1px] border-[#F3F3F3] bg-[#F3F3F3] w-full h-[80px] flex justify-between items-center">
         <div className="flex justify-center items-center gap-[15px] pl-[20px]">
           <img
@@ -80,7 +80,7 @@ export default function News({ news }) {
           />
         </div>
       </div>
-      <h1 className="w-[514px] h-[70px] font-bold text-[20px] mt-[14px] pl-[20px] text-[#403F3F]">
+      <h1 className="lg:w-[514px] h-[70px] font-bold lg:text-[20px] mt-[14px] lg:pl-[20px] text-[#403F3F] pt-2 px-2 lg:px-0">
         {title}
       </h1>
       <img
@@ -91,7 +91,7 @@ export default function News({ news }) {
       <p className="mt-[32px] px-[20px] mb-[20px] text-[16px] text-[#706F6F] leading-[26px]">
         {details.split(" ").slice(0, 40).join(" ") + "..."}
         <span className="text-[#ff6200] font-semibold cursor-pointer hover:font-bold">
-          <Link to={`/news/${id}`}>Read More</Link>
+          <Link to={`/news/${_id}`}>Read More</Link>
         </span>
       </p>
       <br />

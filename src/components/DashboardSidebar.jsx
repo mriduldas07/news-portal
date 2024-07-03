@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import {
-  MdSpaceDashboard,
-  CgProfile,
-  BsNewspaper,
-  TfiWrite,
-} from "react-icons/all";
+import React from "react";
+import { BsNewspaper } from "react-icons/bs";
+import { CgProfile } from "react-icons/cg";
+import { MdSpaceDashboard } from "react-icons/md";
+import { TfiWrite } from "react-icons/tfi";
 import { Link, useLocation } from "react-router-dom";
 
 export default function DashboardSidebar() {

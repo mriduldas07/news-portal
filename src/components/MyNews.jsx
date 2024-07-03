@@ -1,15 +1,18 @@
-import React, { useEffect, useMemo, useState } from "react";
-import MaterialReactTable from "material-react-table";
 import { Box, Typography } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchNewsForEmail } from "../features/newsForQueryEmail/newsForQueryEmailSlice";
+import MaterialReactTable from "material-react-table";
+import React, { useEffect, useMemo } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase.config";
-import { _category_join } from "../utils/_utlities_function";
-import { _author_date_split } from "../utils/_utlities_function";
+import { AiOutlineDelete } from "react-icons/ai";
+import { GrDocumentUpdate } from "react-icons/gr";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { GrDocumentUpdate, AiOutlineDelete } from "react-icons/all";
 import { editActive, removeNews } from "../features/news/newsSlice";
+import { fetchNewsForEmail } from "../features/newsForQueryEmail/newsForQueryEmailSlice";
+import { auth } from "../firebase.config";
+import {
+  _author_date_split,
+  _category_join,
+} from "../utils/_utlities_function";
 
 export default function MyNews() {
   const { news } = useSelector((state) => state.myNews);

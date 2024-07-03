@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import CategoryList from "./CategoryList";
-import RelaltedNews from "./RelaltedNews";
+import CreateNewspaper from "./CreateNewspaper";
 import News from "./News";
+import QJone from "./QJone";
+import RelaltedNews from "./RelaltedNews";
 import SocialLogin from "./SocialLogin";
 import SocialMedia from "./SocialMedia";
-import QJone from "./QJone";
-import CreateNewspaper from "./CreateNewspaper";
-import { useSelector } from "react-redux";
 
 export default function NewsContainer() {
   const { news, isLoading, isError } = useSelector((state) => state.news);
@@ -27,31 +27,40 @@ export default function NewsContainer() {
     newsContent = news
       .filter((f) => {
         if (categoryFilter) {
-          return f.category === categoryFilter;
+          return f.category._id === categoryFilter;
         }
         return f;
       })
-      .map((n) => <News key={n.id} news={n} />);
+      .map((n) => <News key={n._id} news={n} />);
   }
 
   return (
-    <div className="grid grid-cols-12 gap-4 mt-[80px]">
-      <div className="col-span-3">
-        <CategoryList />
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:mt-[80px]">
+      <div className="lg:col-span-3">
+        <div className="hidden lg:block">
+          <CategoryList />
+        </div>
         <div className="mt-[30px]">
           {/* maping on tranding array  */}
           {trandingArray?.map((t) => (
-            <RelaltedNews news={t} key={t.id} />
+            <RelaltedNews news={t} key={t._id} />
           ))}
         </div>
       </div>
       <div className="col-span-6 mx-auto">
-        <h4 className="mb-[20px] font-semibold text-[20px] text-[#403F3F]">
+        <h4 className="hidden lg:block mb-[20px] font-semibold text-[20px] text-[#403F3F]">
           Dragon News Home
         </h4>
-        <div className="grid gap-[30px]">{newsContent}</div>
+        <div className="grid gap-[30px]">
+          <div className="grid gap-8">{newsContent}</div>
+          <div className="block lg:hidden">
+            {trandingArray?.map((t) => (
+              <RelaltedNews news={t} key={t._id} />
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="col-span-3">
+      <div className="hidden lg:block lg:col-span-3">
         <SocialLogin />
         <SocialMedia />
         <QJone />

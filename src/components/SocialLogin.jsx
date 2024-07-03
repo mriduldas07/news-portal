@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineGoogle, AiFillGithub } from "react-icons/all";
+import { AiFillGithub, AiOutlineGoogle } from "react-icons/ai";
 
 export default function SocialLogin() {
   return (
