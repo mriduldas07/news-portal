@@ -40,7 +40,7 @@ export default function NewsContainer() {
         <div className="hidden lg:block">
           <CategoryList />
         </div>
-        <div className="mt-[30px]">
+        <div className="hidden lg:block mt-[30px]">
           {/* maping on tranding array  */}
           {trandingArray?.map((t) => (
             <RelaltedNews news={t} key={t._id} />
@@ -53,7 +53,7 @@ export default function NewsContainer() {
         </h4>
         <div className="grid gap-[30px]">
           <div className="grid gap-8">{newsContent}</div>
-          <div className="block lg:hidden">
+          <div className="grid gap-8 lg:hidden">
             {trandingArray?.map((t) => (
               <RelaltedNews news={t} key={t._id} />
             ))}

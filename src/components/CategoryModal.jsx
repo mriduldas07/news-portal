@@ -11,7 +11,7 @@ export default function CategoryModal() {
   return (
     <div className="rounded-lg bg-[url('/assets/bg.png')] absolute">
       <div className="">
-        <div className="flex flex-col items-center gap-2 pt-[20px] pb-5 w-52">
+        <div className="flex flex-col items-center gap-2 pt-[20px] pb-5 w-56">
           <span
             className={`w-full px-10 text-sm text-white`}
             onClick={() => dispatch(categorySelected(""))}

@@ -7,9 +7,9 @@ import {
 } from "../utils/_utlities_function";
 
 export default function RelaltedNews({ news }) {
-  const { title, category, image_url, id, author } = news || {};
+  const { title, category, image_url, id, createdAt } = news || {};
   return (
-    <div className="w-[267px] h-[306px]">
+    <div className="lg:w-[267px] h-[306px] px-4">
       <Link to={`/news/${id}`}>
         <img src={image_url} alt="thumnail" />
         <h4 className="pt-[20px] font-semibold text-[16px]">{title}</h4>
@@ -23,7 +23,7 @@ export default function RelaltedNews({ news }) {
             alt="folderIcon"
           />
           <span className="mt-[3px]">
-            {_date_formater(_author_date_split(author?.published_date))}
+            {_date_formater(_author_date_split(createdAt))}
           </span>
         </div>
       </div>
