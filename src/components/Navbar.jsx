@@ -60,7 +60,9 @@ export default function Navbar() {
           <Link to="/"> Home</Link>
         </li>
         <li>About</li>
-        <li>Career</li>
+        <li>
+          <Link to={`/career`}>Career</Link>
+        </li>
       </ul>
       <div className="hidden lg:flex justify-end items-center lg:mt-[-2rem]">
         {user && (

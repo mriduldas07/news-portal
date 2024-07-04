@@ -21,15 +21,15 @@ export default function MobileMenu() {
         <Link className="text-white" to="/">
           About
         </Link>
-        <Link className="text-white" to="/">
+        <Link className="text-white" to="/career">
           Career
         </Link>
         {user ? (
           <Link className="text-white" to="/login">
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-3">
               Logout{" "}
               <FiLogOut
-                size={30}
+                size={23}
                 className="cursor-pointer"
                 onClick={handlesignOut}
               />

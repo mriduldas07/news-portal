@@ -6,6 +6,7 @@ import Profile from "./components/Profile";
 import Topbar from "./components/Topbar";
 import UpdateModal from "./components/UpdateModal";
 import RequireAuth from "./hooks/RequireAuth";
+import Career from "./pages/Career";
 import Dashboard from "./pages/Dashboard";
 import DetailsNews from "./pages/DetailsNews";
 import Home from "./pages/Home";
@@ -14,13 +15,28 @@ import Register from "./pages/Register";
 
 function App() {
   return (
-    <div className="mx-auto px-0 lg:px-10">
+    <div className="mx-auto px-0 lg:px-10 max-w-7xl">
       <Topbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/news/:newsId" element={<DetailsNews />} />
+        <Route
+          path="/news/:newsId"
+          element={
+            <RequireAuth>
+              <DetailsNews />
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route
+          path="/carrer"
+          element={
+            <RequireAuth>
+              <Career />
+            </RequireAuth>
+          }
+        />
         <Route
           path="/update/:id"
           element={

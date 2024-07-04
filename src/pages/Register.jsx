@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { auth } from "../firebase.config";
-import axiosIns from "../utils/axios";
-import resetData from "../utils/resetData";
+import axios from "../utils/axios";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -12,32 +11,45 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [createUserWithEmailAndPassword] =
+  const [createUserWithEmailAndPassword, user] =
     useCreateUserWithEmailAndPassword(auth);
 
-  const registerUser = async (user) => {
-    return await axiosIns.post("/user", user);
-  };
+  // const registerUser = async (user) => {
+  //   return await axiosIns.post("/create-user", user);
+  // };
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const data = {
-      name,
-      email,
-      password,
-    };
 
     await createUserWithEmailAndPassword(email, password);
-    localStorage.setItem(
-      "user",
-      JSON.stringify({
-        name,
-      })
-    );
-    registerUser(data);
-    navigate("/");
-    resetData(setName, setEmail, setPassword, setImg, setImgUrl);
+    // localStorage.setItem(
+    //   "user",
+    //   JSON.stringify({
+    //     name,
+    //   })
+    // );
   };
+
+  useEffect(() => {
+    if (user) {
+      const data = {
+        name: name,
+        email: user?.user?.email,
+      };
+
+      async function postUser() {
+        const res = await axios.post("/create-user", data);
+        if (res?.data) {
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("role", res.data.role);
+          navigate("/");
+          resetData(setName, setEmail, setPassword);
+        }
+      }
+      postUser();
+    }
+  }, [user]);
+
   return (
     <div>
       <Navbar />

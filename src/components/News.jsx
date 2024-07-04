@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { CiBookmarkRemove } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { createSavedData } from "../features/save/saveSlice";
-import { fetchUser } from "../features/user/userSlice";
 import { auth } from "../firebase.config";
 import { _author_date_split } from "../utils/_utlities_function";
 
@@ -40,9 +39,9 @@ export default function News({ news }) {
     }
   };
 
-  useEffect(() => {
-    dispatch(fetchUser());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchUser());
+  // }, [dispatch]);
 
   return (
     <div className="w-11/12 lg:w-[558px] bg-[#FFFFFF] border-[1px] border-[#E7E7E7] rounded-[5px] mx-auto">

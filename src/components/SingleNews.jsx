@@ -5,7 +5,7 @@ import { categorySelected } from "../features/filter/filterSlice";
 
 export default function SingleNews({ news }) {
   const dispatch = useDispatch();
-  const { title, image_url, details, category, author } = news || {};
+  const { title, image_url, details, category } = news || {};
   const navigate = useNavigate();
   return (
     <div className="grid grid-cols-1">

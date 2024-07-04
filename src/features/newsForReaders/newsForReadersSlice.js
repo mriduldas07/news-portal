@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getNewsForEmail } from "./newsForQueryEmailAPI";
+import { getNewsForReaders } from "./newsForReadersAPI";
 
 const initialState = {
   news: [],
@@ -8,29 +8,29 @@ const initialState = {
   error: "",
 };
 
-export const fetchNewsForEmail = createAsyncThunk(
-  "newsForQueryEmail/fetchNewsForEmail",
-  async (email) => {
-    const news = await getNewsForEmail(email);
+export const fetchNewsForReader = createAsyncThunk(
+  "newsForReader/fetchNewsForReader",
+  async () => {
+    const news = await getNewsForReaders();
     return news;
   }
 );
 
-const newsForQueryEmailSlice = createSlice({
+const newsForReaderSlice = createSlice({
   name: "newsForQuerySlice",
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(fetchNewsForEmail.pending, (state) => {
+      .addCase(fetchNewsForReader.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
       })
-      .addCase(fetchNewsForEmail.fulfilled, (state, action) => {
+      .addCase(fetchNewsForReader.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isError = false;
         state.news = action.payload;
       })
-      .addCase(fetchNewsForEmail.rejected, (state, action) => {
+      .addCase(fetchNewsForReader.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.news = [];
@@ -39,4 +39,4 @@ const newsForQueryEmailSlice = createSlice({
   },
 });
 
-export default newsForQueryEmailSlice.reducer;
+export default newsForReaderSlice.reducer;

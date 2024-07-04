@@ -8,7 +8,7 @@ import { Link, useLocation } from "react-router-dom";
 export default function DashboardSidebar() {
   const { pathname } = useLocation();
   return (
-    <div className="bg-[#3c3cbe] text-white rounded-md  min-h-[600px] w-[260px] mx-auto">
+    <div className="bg-[#3c3cbe] text-white rounded-md   min-h-[600px] w-[260px] mx-auto">
       <div className="flex items-center justify-center gap-3 py-5">
         <MdSpaceDashboard size={35} />
         <span className="text-2xl font-semibold">Dashboard</span>

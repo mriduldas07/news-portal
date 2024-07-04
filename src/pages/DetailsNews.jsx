@@ -6,10 +6,7 @@ import RelatedEditor from "../components/RelatedEditor";
 import SingleNews from "../components/SingleNews";
 import SocialLogin from "../components/SocialLogin";
 import SocialMedia from "../components/SocialMedia";
-import {
-  addAuthor,
-  fetchSingleNews,
-} from "../features/singleNews/singleNewsSlice";
+import { fetchSingleNews } from "../features/singleNews/singleNewsSlice";
 
 export default function DetailsNews() {
   const { singleNews, isLoading, isError } = useSelector(
@@ -20,7 +17,7 @@ export default function DetailsNews() {
 
   useEffect(() => {
     dispatch(fetchSingleNews(newsId));
-    dispatch(addAuthor(singleNews.author?.name));
+    // dispatch(addAuthor(singleNews.author?.name));
   }, [dispatch, newsId]);
 
   let singleNewsContent;

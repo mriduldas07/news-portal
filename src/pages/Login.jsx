@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { auth } from "../firebase.config";
+import axios from "../utils/axios";
 import resetData from "../utils/resetData";
 
 export default function Login() {
@@ -19,12 +20,28 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     await signInWithEmailAndPassword(email, password);
-    resetData(setEmail, setPassword);
+    // resetData(setEmail, setPassword);
   };
 
-  if (user) {
-    navigate(from, { replace: true });
-  }
+  useEffect(() => {
+    if (user) {
+      const data = {
+        name: user?.user?.displayName,
+        email: user?.user?.email,
+      };
+
+      async function postUser() {
+        const res = await axios.post("/create-user", data);
+        if (res?.data) {
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("role", res.data.role);
+          resetData(setEmail, setPassword);
+          navigate(from, { replace: true });
+        }
+      }
+      postUser();
+    }
+  }, [user]);
 
   return (
     <div>
