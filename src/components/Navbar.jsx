@@ -49,18 +49,18 @@ export default function Navbar() {
       <div className="block lg:hidden">
         <BsMenuButtonWide size={30} onClick={handleMobileManuber} />
         {openMobileMenu && (
-          <div className="relative top-1 end-36">
+          <div className="relative top-1 end-36"> 
             <MobileMenu />
           </div>
         )}
       </div>
 
       <ul className="hidden lg:flex justify-center items-center text-center lg:pl-[8.5rem]">
-        <li>
+        <li className="hover:font-semibold">
           <Link to="/"> Home</Link>
         </li>
-        <li>About</li>
-        <li>
+        <li className="hover:font-semibold">About</li>
+        <li className="hover:font-semibold">
           <Link to={`/career`}>Career</Link>
         </li>
       </ul>

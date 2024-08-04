@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import NewsContainer from "../components/NewsContainer";
 import { fetchCategories } from "../features/category/categorySlice";
 import { fetchNews } from "../features/news/newsSlice";
+import { fetchSavedData } from "../features/save/saveSlice";
 import { auth } from "../firebase.config";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
     updateProfile({ displayName: name, photoURL: img });
     dispatch(fetchNews());
     dispatch(fetchCategories());
+    dispatch(fetchSavedData());
   }, [name, img, dispatch]);
 
   return (

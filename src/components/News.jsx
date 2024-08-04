@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { CiBookmarkRemove } from "react-icons/ci";
+import { IoBookmark, IoBookmarkOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { createSavedData } from "../features/save/saveSlice";
 import { auth } from "../firebase.config";
-import { _author_date_split } from "../utils/_utlities_function";
+import { _date_formater } from "../utils/_utlities_function";
 
 export default function News({ news }) {
   const { user: userData } = useSelector((state) => state.user);
+  const { save } = useSelector((state) => state.save);
 
   const dispatch = useDispatch();
   const [isSaved, setIsSaved] = useState(false);
-  const { author, title, total_view, rating, image_url, details, _id } =
+  const { author, title, total_view, rating, image_url, details, _id,createdAt } =
     news || {};
 
   const {
@@ -24,12 +25,10 @@ export default function News({ news }) {
   const { email } = user || {};
   const navigate = useNavigate();
 
-  const handleSave = (id) => {
+  const handleSave = async () => {
     if (email) {
-      const { id: userId } = userData?.find((u) => u.email == email);
       const savedData = {
-        userId,
-        newsId: id,
+        newsId: _id,
       };
       dispatch(createSavedData(savedData));
       setIsSaved(true);
@@ -39,9 +38,7 @@ export default function News({ news }) {
     }
   };
 
-  // useEffect(() => {
-  //   dispatch(fetchUser());
-  // }, [dispatch]);
+
 
   return (
     <div className="w-11/12 lg:w-[558px] bg-[#FFFFFF] border-[1px] border-[#E7E7E7] rounded-[5px] mx-auto">
@@ -57,26 +54,21 @@ export default function News({ news }) {
               {author_name}
             </h6>
             <p className="font-normal text-[14px] text-[#706F6F]">
-              {_author_date_split(author_publish_date)}
+              {_date_formater(createdAt)}
             </p>
           </div>
         </div>
-        <div className="flex justify-center items-center gap-[13px] pr-[28px]">
-          {isSaved ? (
-            <CiBookmarkRemove size={30} className="cursor-pointer" />
+        <div className="flex justify-center items-center gap-[13px] pr-[28px]" onClick={() => handleSave()}>
+          {isSaved || save.find(f => f?.savedNews?._id === _id)  ? (
+            <IoBookmark size={30} className="cursor-pointer text-[#7b7a7a]" />
           ) : (
-            <img
-              className="cursor-pointer"
-              src="/assets/saveIcon.png"
-              alt="saveIcon"
-              onClick={() => handleSave(id)}
-            />
+            <IoBookmarkOutline size={30} className="cursor-pointer text-[#7b7a7a]" />
           )}
           <img
             className="cursor-pointer"
             src="/assets/shareIcn.png"
             alt="shareIcon"
-          />
+          /> 
         </div>
       </div>
       <h1 className="lg:w-[514px] h-[70px] font-bold lg:text-[20px] mt-[14px] lg:pl-[20px] text-[#403F3F] pt-2 px-2 lg:px-0">

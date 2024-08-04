@@ -1,16 +1,7 @@
 li {
   color: #706f6f;
   margin-left: 10px;
-  font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  cursor: pointer;
-}
-li:hover {
-  color: #706f6f;
-  margin-left: 10px;
-  font-style: normal;
-  font-weight: 700;
   font-size: 18px;
   cursor: pointer;
 }

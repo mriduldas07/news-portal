@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { addSave, getSave } from "./saveAPI";
+import { addSave, getSavedNews } from "./saveAPI";
 
 const initialState = {
   save: [],
@@ -18,8 +18,8 @@ export const createSavedData = createAsyncThunk(
 
 export const fetchSavedData = createAsyncThunk(
   "save/fetchSavedData",
-  async (email) => {
-    const getSaved = await getSave(email);
+  async () => {
+    const getSaved = await getSavedNews();
     return getSaved;
   }
 );

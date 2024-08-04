@@ -5,7 +5,7 @@ export const addSave = async (data) => {
   return res.data;
 };
 
-export const getSave = async (email) => {
-  const res = await axios.get(`/user?email_like=${email}&&_embed=saved`);
+export const getSavedNews = async () => {
+  const res = await axios.get("/saved");
   return res.data;
 };
